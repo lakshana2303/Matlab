@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">PHOTO GALLERY</h1>
+    <div class="gallery-wrap">
+        
+        <img src="./back.png" id="backBtn">
+        <div class="gallery">
+            <!-- <h1>PHOTO GALLERY</h1> -->
+            <div>
+                <span><img src="./3 sha.jpeg"></span>
+                <span><img src="./9.jpeg"></span>
+                <span><img src="./3 sha.jpeg"></span>
+                
+            </div>
+            
+            <div>
+                <span><img src="./arjun.jpeg"></span>
+                <span><img src="./vj d.jpeg"></span>
+                <span><img src="./arjun.jpeg"></span>
+                
+            </div>
+            <div>
+                <span><img src="./kamal.jpeg"></span>
+                <span><img src="./9.jpeg"></span>
+                <span><img src="./vj d.jpeg"></span>
+                
+            </div>
+            </div>
+
+        <img src="./next.png" id="nextBtn">
+    </div>
+    <script>
+        let scrollContainer=document.querySelector(".gallery");
+        let backBtn=document.getElementById("backBtn");
+        let nextBtn=document.getElementById("nextBtn");
+        scrollContainer.addEventListener("wheel",(evt)=>{
+            evt.preventDefault();
+            scrollContainer.scrollLeft+=evt.deltaY;
+            scrollContainer.style.scrollBehavior="auto";
+
+        });
+        nextBtn.addEventListener("click",()=>{
+            scrollContainer.style.scrollBehavior="smooth";
+            scrollContainer.scrollLeft+=900;
+        });
+        backBtn.addEventListener("click",()=>{
+            scrollContainer.style.scrollBehavior="smooth";
+            scrollContainer.scrollLeft-=900;
+        });
+
+    </script>
+
+    
+</body>
+</html>
